@@ -24,4 +24,21 @@ class Phrase {
                 phraseDiv.appendChild(li);
             });
     }
+
+    checkLetter(letter) {
+        return this.phrase.includes(letter);
+    }
+
+    showMatchedLetter(letter) {
+        const letters = document.querySelectorAll(`.letter.${letter}`);
+        letters.forEach(item => {
+            item.classList.remove('hide');
+            item.classList.add('show');
+        });
+    }
 }
+
+const phrase = new Phrase('Hello World');
+console.log(phrase.phrase);
+console.log(phrase.checkLetter('h'));
+console.log(phrase.checkLetter('z'));
