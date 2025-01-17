@@ -38,7 +38,7 @@ class Phrase {
     }
 }
 
-const phrase = new Phrase('Hello World');
-console.log(phrase.phrase);
-console.log(phrase.checkLetter('h'));
-console.log(phrase.checkLetter('z'));
+//const phrase = new Phrase('Hello World');
+//console.log(phrase.phrase);
+//console.log(phrase.checkLetter('h'));
+//console.log(phrase.checkLetter('z'));
