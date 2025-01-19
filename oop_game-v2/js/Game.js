@@ -24,6 +24,43 @@ class Game {
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhrasetoDisplay();
     }
+
+    handleInteraction(button) {
+        button.disabled = true;
+        const letter = button.textContent;
+
+        if(this.activePhrase.chackLetter(letter)) {
+            buttonclassList.add('chosen');
+            this.activePhrase.showMatchedLetter(letter);
+            if(this.checkForWin()) {
+                this.gameOver(true);
+            }
+        } else {
+            button.classList.add('wrong');
+            this.removeLife();
+        } 
+    }
+
+    removeLife() {
+        const hearts = document.querySelectorAll('.tries img');
+        hearts[this.missed].src = 'images/lostHeart.png';
+        this.missed++;
+
+        if(this.missed === 5) {
+            this.gameOver(false);
+        }
+    }
+
+    checkForWin() {
+        return !document.querySelectorAll('.hide').length;
+    }
+
+    gameOver(gameWon) {
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'flex';
+        overlay.className = gameWon ? 'win' : 'lost';
+        document.querySelector('#game-over-message').textContent = gameWon ? 'Great Job!' : 'Sorry, try again!';
+    }
 }
 
 const game = new Game();
