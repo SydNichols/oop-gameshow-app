@@ -8,9 +8,9 @@
   --color-lose: #D94545;
   --color-start: #5b85b7;
   --color-neutral: #445069;
-  --color-neutral-light: #D2D2D2;
+  --color-neutral-light: #FFFFFF;
   --color-keys: #37474F;
-  --color-keys-light: #E5E5E5;
+  --color-keys-light: #FFFFFF;
   --font-size-large: 60px;
   --font-size-medium: 20px;
   --transition: all .2s ease-in-out;
@@ -67,6 +67,8 @@ button {
 
 .main-container {
   display: flex;
+  background: linear-gradient(#F4FAFC, #f3b7ad, #93aec1);
+  min-height: 100vh;
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
@@ -79,6 +81,7 @@ button {
   padding: 10px;
 }
 
+
 #phrase ul li{
   margin-top: 15px;
 }
@@ -89,6 +92,10 @@ button {
   color: #3a3f58;
 }
 
+/* Tries */
+.tries img {
+  filter: hue-rotate(180deg);
+}
 
 /* Phrase */
 
