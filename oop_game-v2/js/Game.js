@@ -22,15 +22,15 @@ class Game {
     startGame() {
         document.getElementById('overlay').style.display = 'none';
         this.activePhrase = this.getRandomPhrase();
-        this.activePhrase.addPhrasetoDisplay();
+        this.activePhrase.addPhraseToDisplay();
     }
 
     handleInteraction(button) {
         button.disabled = true;
         const letter = button.textContent;
 
-        if(this.activePhrase.chackLetter(letter)) {
-            buttonclassList.add('chosen');
+        if(this.activePhrase.checkLetter(letter)) {
+            button.classList.add('chosen');
             this.activePhrase.showMatchedLetter(letter);
             if(this.checkForWin()) {
                 this.gameOver(true);
@@ -58,7 +58,7 @@ class Game {
     gameOver(gameWon) {
         const overlay = document.getElementById('overlay');
         overlay.style.display = 'flex';
-        overlay.className = gameWon ? 'win' : 'lost';
+        overlay.className = gameWon ? 'win' : 'lose';
         document.querySelector('#game-over-message').textContent = gameWon ? 'Great Job!' : 'Sorry, try again!';
     }
 }
