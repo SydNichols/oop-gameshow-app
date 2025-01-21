@@ -63,5 +63,5 @@ class Game {
     }
 }
 
-const game = new Game();
-console.log(game.getRandomPhrase());
+//const game = new Game();
+//console.log(game.getRandomPhrase());

@@ -12,3 +12,23 @@ document.getElementById('qwerty').addEventListener('click', (e) => {
     }
 });
 
+function resetGame() {
+    document.querySelector('#phrase ul').innerHTML = '';
+
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => {
+        key.disabled = false;
+        key.className = 'key';
+    });
+
+    const hearts = document.querySelectorAll('.tries img');
+    hearts.forEach(heart => {
+        heart.src = 'images/liveHeart.png';
+    });
+}
+
+document.getElementById('btn__reset').addEventListener('click', () => {
+    resetGame();
+    game = new Game();
+    game.startGame();
+});
