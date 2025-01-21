@@ -6,6 +6,7 @@ document.getElementById('btn__reset').addEventListener('click', () => {
     game.startGame();
 });
 
+//listens for a keyboard click
 document.getElementById('qwerty').addEventListener('click', (e) => {
     if(e.target.className === 'key') {
         game.handleInteraction(e.target);
@@ -20,7 +21,8 @@ function resetGame() {
         key.disabled = false;
         key.className = 'key';
     });
-
+    
+    //reset the hearts in the game
     const hearts = document.querySelectorAll('.tries img');
     hearts.forEach(heart => {
         heart.src = 'images/liveHeart.png';

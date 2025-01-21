@@ -1,15 +1,18 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Phrase.js */
-
+    
+// This sets up the phrase
 class Phrase {
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
     }
 
+// Spaces between words are handled differently than letters
     addPhraseToDisplay() {
         const phraseDiv = document.querySelector('#phrase ul');
 
+             //creates a new box for each letter
             this.phrase.split('').forEach(letter => {
                 const li = document.createElement('li');
 
@@ -25,6 +28,7 @@ class Phrase {
             });
     }
 
+    //checks if the letter is in the phrase
     checkLetter(letter) {
         return this.phrase.includes(letter);
     }

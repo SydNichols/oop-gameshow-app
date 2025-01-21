@@ -2,9 +2,11 @@
  * Project 4 - OOP Game App
  * Game.js */
 
+//sets up a new game
 class Game {
     constructor() {
         this.missed = 0;
+        //current list of phrases
         this.phrases = [
             new Phrase('Life is Good'),
             new Phrase('Hello World'),
@@ -15,10 +17,12 @@ class Game {
         this.activePhrase = null;
     }
 
+    //picks a random phrase from the current list
     getRandomPhrase() {
         return this.phrases[Math.floor(Math.random() * this.phrases.length)];
     }
 
+    //starts a new game
     startGame() {
         document.getElementById('overlay').style.display = 'none';
         this.activePhrase = this.getRandomPhrase();
@@ -41,6 +45,7 @@ class Game {
         } 
     }
 
+    //removes a heart when the player guesses the wrong letter
     removeLife() {
         const hearts = document.querySelectorAll('.tries img');
         hearts[this.missed].src = 'images/lostHeart.png';
@@ -55,6 +60,7 @@ class Game {
         return !document.querySelectorAll('.hide').length;
     }
 
+    //shows the win or lost screen
     gameOver(gameWon) {
         const overlay = document.getElementById('overlay');
         overlay.style.display = 'flex';
