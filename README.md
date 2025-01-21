@@ -1,8 +1,8 @@
-#Style Changes
-
 Welcome to may gameshow app! Project 4 for my Treehouse techdegree. To make the project more interesting, I made some tyle changes to the game. 
 
 Hope you enjoy!
+
+#Style Changes
 
 - Changed the background to a pretty gradient using these colors: 
     - Top color: #f4fafc (light blue/white)
